@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neylin Zavala - Network Marketing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav li {
+            margin: 0;
+        }
+        
+        nav a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 20px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .service-card h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .service-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .service-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 20px;
+            margin-top: 4rem;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav a {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="https://client-uploads.nyc3.digitaloceanspaces.com/images/f60f50d0-22c2-47f4-b20d-377e1b6ee39c/2025-11-05T03-51-46-780Z-827dbd8b.jpg" alt="Neylin Zavala" class="profile-img">
+            <h1>Neylin Zavala</h1>
+            <p class="subtitle">Emprendimiento Digital | Network Marketing</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre Mí</a></li>
+            <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section id="inicio">
+        <h2>Transforma Tu Vida con Network Marketing</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>¡Bienvenido a mi emprendimiento digital! Soy Neylin Zavala y estoy aquí para ayudarte a descubrir el poder del Network Marketing.</p>
+                <p>El Network Marketing no es solo un negocio, es un estilo de vida que te permite alcanzar la libertad financiera mientras ayudas a otros a lograr sus sueños.</p>
+                <p><strong>¿Estás listo para dar el siguiente paso hacia tu independencia financiera?</strong></p>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600" alt="Equipo de trabajo" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.2);">
+            </div>
+        </div>
+    </section>
+
+    <section id="beneficios" style="background: #f8f9fa;">
+        <h2>¿Por Qué Network Marketing?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3>Ingresos Ilimitados</h3>
+                <p>Tu potencial de ingresos no tiene límites. Tú decides cuánto quieres ganar.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">⏰</div>
+                <h3>Flexibilidad de Tiempo</h3>
+                <p>Trabaja cuando quieras y desde donde quieras. Tú controlas tu horario.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🚀</div>
+                <h3>Crecimiento Personal</h3>
+                <p>Desarrolla habilidades de liderazgo, comunicación y emprendimiento.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">👥</div>
+                <h3>Comunidad de Apoyo</h3>
+                <p>Únete a una red de emprendedores que te apoyan y motivan.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🌍</div>
+                <h3>Negocio Global</h3>
+                <p>Construye tu red en cualquier parte del mundo desde tu hogar.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">📈</div>
+                <h3>Ingresos Residuales</h3>
+                <p>Genera ingresos pasivos que continúan creciendo con el tiempo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios">
+        <h2>Lo Que Ofrezco</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Mentoría Personalizada</h3>
+                <ul>
+                    <li>Sesiones uno a uno</li>
+                    <li>Plan de acción personalizado</li>
+                    <li>Seguimiento continuo</li>
+                    <li>Estrategias probadas</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Capacitación Digital</h3>
+                <ul>
+                    <li>Marketing en redes sociales</li>
+                    <li>Estrategias de prospección</li>
+                    <li>Cierre de ventas</li>
+                    <li>Construcción de equipos</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Desarrollo de Liderazgo</h3>
+                <ul>
+                    <li>Habilidades de comunicación</li>
+                    <li>Gestión de equipos</li>
+                    <li>Motivación y coaching</li>
+                    <li>Duplicación de sistemas</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-section">
+        <h2>¿Listo Para Comenzar Tu Transformación?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">No esperes más para alcanzar tus sueños. El momento es ahora.</p>
+        <a href="#contacto" class="cta-button">¡Contáctame Ahora!</a>
+    </div>
+
+    <section id="contacto">
+        <h2>Conecta Conmigo</h2>
+        <div class="contact-info">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <p>neylinveronicazavalaperozo@gmail.com</p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">💬</div>
+                <h3>WhatsApp</h3>
+                <p>Contáctame para más información</p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📱</div>
+                <h3>Redes Sociales</h3>
+                <p>Sígueme en mis redes para contenido exclusivo</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Neylin Zavala - Network Marketing. Todos los derechos reservados.</p>
+        <p style="margin-top: 1rem; opacity: 0.8;">Transformando vidas a través del emprendimiento digital</p>
+    </footer>
+</body>
+</html>
